@@ -1,0 +1,44 @@
+.error-page {
+    min-height: 65vh;
+    width: 90%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.error-text {
+    width: 50%;
+}
+.error-text h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+.error-text h3 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+.error-pic img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .not-found{
+        margin: 2rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .error-text{
+        width: 100%;
+    }
+    .error-text h1 {
+        font-size: 2.5rem;
+    }
+    .error-text h3 {
+        font-size: 1.5rem;
+    }
+}

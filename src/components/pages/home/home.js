@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import MovieItem from '../../components/movie/movie';
 import './home.css';
 import '../../components/header/header.css';
+import ErrorPage from '../../components/errorPage/errorPage';
 
 export default function Home() {
+  const [ response, setResponse ] = useState(false);
   const [ movies, setMovies ] = useState([]);
   const [ searchValue, setSearchValue ] = useState('star wars');
 
@@ -13,7 +15,11 @@ export default function Home() {
     if (searchValue.length >= 3) {
       fetch(`https://www.omdbapi.com/?apikey=ff1832e2&s=${searchValue}`)
         .then(res => res.json())
-        .then(data => setMovies(data.Search))
+        .then(data => {
+          setMovies(data.Search)
+          setResponse(data.Response)
+          console.log(data.Response);
+        })
         .catch(err => console.log(err))
     }
   }
@@ -47,11 +53,11 @@ export default function Home() {
         </div>
       </div>
       <div className='movies'>
-        {movies.map(movieData => {
+        {response == 'True' ? movies.map(movieData => {
           return(
             <MovieItem data={movieData} key={movieData.imdbID}/>
           )
-        })}
+        }) : <ErrorPage />}
       </div>
       <Footer />
     </div>
