@@ -31,7 +31,7 @@ export default function Watchlist() {
             return (
               <div key={movie} className='watchlist-item'>
                 <p>{movie}</p>
-                  <a onClick={() => {dispatch(removeFromList(movie))}} className='remove-watchlist'><i class="fa-solid fa-xmark"></i></a>
+                  <a onClick={() => {dispatch(removeFromList(movie))}} className='remove-watchlist'><i className="fa-solid fa-xmark"></i></a>
               </div>
           )
           })}

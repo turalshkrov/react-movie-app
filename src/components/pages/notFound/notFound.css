@@ -1,0 +1,32 @@
+.not-found {
+    margin: 5rem 0 5rem 5rem;
+    min-height: 60vh;
+}
+.not-found h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+.not-found h3 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .not-found{
+        margin: 2rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .not-found{
+        margin: 2rem 1rem;
+    }
+    .not-found h1 {
+        font-size: 2.5rem;
+    }
+    .not-found h3 {
+        font-size: 1.5rem;
+    }
+}
+
+

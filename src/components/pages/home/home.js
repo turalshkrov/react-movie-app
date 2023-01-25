@@ -10,10 +10,12 @@ export default function Home() {
   const [ searchValue, setSearchValue ] = useState('star wars');
 
   const fetchData = () => {
-    fetch(`http://www.omdbapi.com/?apikey=ff1832e2&s=${searchValue}`)
-      .then(res => res.json())
-      .then(data => setMovies(data.Search))
-      .catch(err => console.log(err))
+    if (searchValue.length >= 3) {
+      fetch(`http://www.omdbapi.com/?apikey=ff1832e2&s=${searchValue}`)
+        .then(res => res.json())
+        .then(data => setMovies(data.Search))
+        .catch(err => console.log(err))
+    }
   }
   useEffect(() => {
     fetchData();
