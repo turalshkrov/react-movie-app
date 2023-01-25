@@ -7,7 +7,7 @@ import './index.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='*' element={<NotFound />}></Route>
