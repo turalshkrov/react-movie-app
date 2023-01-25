@@ -8,7 +8,7 @@ export default function MovieInfoPage() {
     const params = useParams();
     
     useEffect(() => {
-      fetch(`http://www.omdbapi.com/?apikey=ff1832e2&i=${params.id}`)
+      fetch(`https://www.omdbapi.com/?apikey=ff1832e2&i=${params.id}`)
       .then(res => res.json())
       .then(data => {setMovie(data)
       console.log(data)})

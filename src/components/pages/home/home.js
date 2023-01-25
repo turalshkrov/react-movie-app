@@ -11,7 +11,7 @@ export default function Home() {
 
   const fetchData = () => {
     if (searchValue.length >= 3) {
-      fetch(`http://www.omdbapi.com/?apikey=ff1832e2&s=${searchValue}`)
+      fetch(`https://www.omdbapi.com/?apikey=ff1832e2&s=${searchValue}`)
         .then(res => res.json())
         .then(data => setMovies(data.Search))
         .catch(err => console.log(err))
