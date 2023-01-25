@@ -1,0 +1,50 @@
+.header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: min-content;
+    background-color: #f5ee30;
+    font-size: 0.85rem;
+    padding: 0 5px;
+    border-radius: 3px;
+    color: #000;
+}
+.search-box input {
+    width: 300px;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.watchlist-link a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.watchlist-link a:hover {
+    transition: .3s;
+    background-color: #333;
+}
+
+@media only screen and (max-width: 800px) {
+   .header {
+        padding: 15px 0;
+   }
+   .search-box input{
+        width: 240px;
+   }
+}
+@media only screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .logo, .search-box, .watchlist-link {
+        margin: 5px 0;
+    }
+}

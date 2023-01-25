@@ -1,0 +1,30 @@
+.watchlist-title {
+    margin: 1.5rem 0;
+}
+.watchlist {
+    min-height: 60vh;
+}
+.watchlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 15px 0;
+}
+.watchlist-item P {
+    width: 70%;
+}
+.remove-watchlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: #aaa;
+    color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.remove-watchlist:hover {
+    transition: .4s;
+    background-color: #fff;
+}

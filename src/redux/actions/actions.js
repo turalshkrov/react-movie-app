@@ -13,9 +13,3 @@ export const removeFromList = (id) => {
         payload: id
     }
 }
-
-export const clearList = () => {
-    return {
-        type: actionTypes.ADD_TO_LIST
-    }
-}

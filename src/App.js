@@ -1,8 +1,21 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './components/pages/home/home';
+import MovieInfoPage from './components/pages/movieInfo/movieInfoPage';
+import NotFound from './components/pages/notFound';
+import Watchlist from './components/pages/watchlist/watchlist';
+import './index.css'
+
 function App() {
   return (
-    <div className="App">
-      <h1>React App</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='*' element={<NotFound />}></Route>
+        <Route path='/movies' element={<Home />}></Route>
+        <Route path='/watchlist' element={<Watchlist />}></Route>
+        <Route path='/movies/:id' element={<MovieInfoPage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
