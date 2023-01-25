@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const INITIAL_STATE = {
-    movies: localStorage.getItem('watchlist') === undefined ? [] : JSON.parse(localStorage.getItem('watchlist'))
+    movies: localStorage.getItem('watchlist') === null ? [] : JSON.parse(localStorage.getItem('watchlist'))
 }
 
 const listReducer = (state = INITIAL_STATE, action) => {
