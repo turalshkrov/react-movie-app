@@ -1,2 +1,4 @@
 export const ADD_TO_LIST = 'ADD_TO_LIST';
 export const REMOVE_FROM_LIST = 'REMOVE_FROM_LIST';
+
+export const CHANGE_SEARCH_KEY = 'CHANGE_SEARCH_KEY';

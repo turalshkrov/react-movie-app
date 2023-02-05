@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import Footer from '../../components/footer/footer';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { changeSearchKey } from '../../../redux/actions/actions';
+import Footer from '../../components/footer/footer';
 import MovieItem from '../../components/movie/movie';
-import './home.css';
-import '../../components/header/header.css';
 import ErrorPage from '../../components/errorPage/errorPage';
+import '../../components/header/header.css'
+import './home.css';
 
 export default function Home() {
   const [ response, setResponse ] = useState(false);
   const [ movies, setMovies ] = useState([]);
-  const [ searchValue, setSearchValue ] = useState('star wars');
+  const searchKey = useSelector(state => state.searchReducer.searchKey);
+
+  const dispatch = useDispatch()
 
   const fetchData = () => {
-    if (searchValue.length >= 3) {
-      fetch(`https://www.omdbapi.com/?apikey=ff1832e2&s=${searchValue}`)
+    if (searchKey.length >= 3) {
+      fetch(`https://www.omdbapi.com/?apikey=ff1832e2&s=${searchKey}`)
         .then(res => res.json())
         .then(data => {
           setMovies(data.Search)
@@ -33,7 +37,7 @@ export default function Home() {
   }
 
   const changeHandler = (e) => {
-    setSearchValue(e.target.value);
+    dispatch(changeSearchKey(e.target.value));
   }
   return (
     <div className='container'>

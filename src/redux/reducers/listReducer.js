@@ -16,7 +16,7 @@ const listReducer = (state = INITIAL_STATE, action) => {
             }
         case actionTypes.REMOVE_FROM_LIST:
             return {
-                state,
+                ...state,
                 movies: [...state.movies.filter(id => id !== action.payload)]
             }
         default:

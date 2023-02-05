@@ -13,3 +13,10 @@ export const removeFromList = (id) => {
         payload: id
     }
 }
+
+export const changeSearchKey = (searchKey) => {
+    return {
+        type: actionTypes.CHANGE_SEARCH_KEY,
+        payload: searchKey
+    }
+}
